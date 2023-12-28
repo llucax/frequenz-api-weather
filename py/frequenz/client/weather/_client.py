@@ -24,7 +24,7 @@ class Client:
         self._svc_addr = svc_addr
         self._stub = weather_pb2_grpc.WeatherForecastServiceStub(grpc_channel)
         self._streams: dict[
-            tuple[list[Location], list[ForecastFeature]],
+            tuple[Location | ForecastFeature, ...],
             GrpcStreamingHelper[
                 weather_pb2.ReceiveLiveWeatherForecastResponse, Forecasts
             ],
