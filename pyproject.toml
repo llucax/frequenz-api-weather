@@ -106,6 +106,8 @@ Support = "https://github.com/frequenz-floss/frequenz-api-weather/discussions/ca
 [tool.black]
 line-length = 88
 target-version = ['py311']
+# Submodules may contain external code that doesn't follow our formatting rules.
+extend-exclude = '^/submodules/'
 
 [tool.isort]
 profile = "black"
